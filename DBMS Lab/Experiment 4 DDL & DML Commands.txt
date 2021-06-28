@@ -1,0 +1,40 @@
+create database Bus_Reservation_System;
+USE Bus_Reservation_System;
+
+create table Bus(BusNo varchar(20) primary key,Source varchar(20), Destination varchar(15));
+insert into Bus values('TS05', 'Hyderabad', 'Karnataka');
+insert into Bus values('AP07', 'hariyana', 'Kashmir');
+insert into Bus values('AP08', 'Guntur', 'Hyderabad');
+Select* from Bus;
+select BusNo,Source,Destination from Bus;
+update Bus set Source = 'Maharashtra' where BusNo = 'TS05';
+alter table Bus add Driver_Name varchar(20);
+Select* from Bus;
+
+create table Passenger(PNo int(10) primary key,PName varchar (15),PAge int ,PGender Char(6), P_seatnum int(20));
+insert into Passenger values(1221, 'esha', '31', 'Female','8');
+insert into Passenger values(1233, 'hashh', '25', 'Male','6');
+insert into Passenger values(1257, 'Ibat', '82', 'Female','9');
+insert into Passenger values(1204, 'Choks', '14', 'Male','12');
+select * from Passenger;
+update Passenger set PName = 'Span' where PNo = 1252;
+alter table Passenger modify PName varchar(25);
+alter table Passenger drop P_seatnum;
+select * from Passenger;
+
+CREATE TABLE Ticket(Ticket_No int Primary Key,Journey_date Date,Age int,Sex varchar(10),Source Varchar(20),Arrival_time varchar(10),Destination Varchar(20), Dep_time varchar(10));
+insert into Ticket values(01, '2021-06-20', 21,'Male','Gachibowli','8:10 AM','Kukatpally', '12:50PM');
+insert into Ticket values(03, '2021-06-21', 25,'Female','Secendrabad','5:00 AM','Old Boinpally', '7:30AM');
+select * from Ticket;
+update Ticket set Destination = 'Chandanagar' where Ticket_No = 03;
+delete from Ticket where Ticket_No = 01;
+select * from Ticket;
+
+
+CREATE TABLE Reservation(PNRNo int(10), foreign key(PNRNo) references Passenger(PNRNo),Journey_date date, No_of_seats int,Address Varchar(40),Contact_No int(10),Status Char(2));
+insert into Reservation values('2000', '2020-08-12', 4, 'Dilsukhnagar', '23467', 'N' );
+insert into Reservation values('4010', '2020-04-30', 9, 'Sanathnagar', '98759', 'Y' );
+select * from Reservation;
+update Reservation set Contact_No = 32145 where PNRNo = 2000;
+select * from Reservation;
+show tables;
