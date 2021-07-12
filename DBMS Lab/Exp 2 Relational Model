@@ -1,0 +1,6 @@
+Relation Schema:
+1.Bus(Bus_No int(4) Primary key, Destination char(20), Source char(20));
+2.Passenger(Pnr_No int(10) Primary key, Age int(10), Ticket_No varchar(4), Name char(10), PPno int(4), Sex char(6));
+3.Ticket(Ticket_No int(10), Dept_Time varchar(6),Age int(4), Source char(20), Sex varchar(6),Destination char(20), Journey_Date Date);
+4.Reservation(Pnr_No int(10),foreign key(pnr_No) references passenger(Pnr_No), status char(10), Contact_No int(10), Journey_Date Date, 
+  Address varchar(30), No_of_Seats int(4)); 
