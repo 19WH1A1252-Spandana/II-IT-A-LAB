@@ -21,3 +21,7 @@ printf("\n%s\n",strin);
 close(f2);
 return 0;
 }
+
+//Output:
+// Hai
+// Hai
