@@ -1,5 +1,5 @@
 create table student(htnum int primary key, name char(10), cgpa real, busnum int);
-insert into student values(101, 'span', 9.8,1),(102,'ibat',9.5,1),(103,'esha',9.2,2),(104,'hash',8.7,3),(105,'choks',8.5,4),(106,'appu',8.9,3);
+insert into student values(101, 'spandana', 9.8,1),(102,'Harshitha',9.5,1),(103,'Preethi',9.2,2),(104,'Sravya',8.7,3),(105,'Harshitha',8.5,4);
 select * from student;
 select min(cgpa) as MINIMUM_CGPA from student;
 select max(cgpa) as MAXIMUM_CGPA from student;
